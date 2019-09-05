@@ -19,7 +19,7 @@
     "build:esm": "tsc -m esNext --outDir esm",
     "build": "yarn pre-build&&yarn build:cjs&&yarn build:esm",
     "pre-build": "yarn rimraf ./lib ./esm",
-    "lint": "yarn eslint src/*"
+    "lint": "yarn eslint src/**/*.{ts,tsx}"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
