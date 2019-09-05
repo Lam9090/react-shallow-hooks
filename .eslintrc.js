@@ -10,6 +10,11 @@ module.exports = {
       modules: true
     }
   },
+  settings: {
+    react: {
+      version: "detect"
+    }
+  },
   plugins: ["@typescript-eslint", "react"],
   extends: [
     "prettier",
@@ -34,7 +39,6 @@ module.exports = {
     "react/jsx-props-no-spreading": 0,
     "jsx-a11y/anchor-has-content": 0,
     "no-multi-assign": 0,
-    "import/no-extraneous-dependencies": 0,
-    
+    "import/no-extraneous-dependencies": 0
   }
 };
