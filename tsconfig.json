@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["es2018", "dom"],
+    "jsx": "react",
+    "declaration": true,
+    "sourceMap": false,
+    "strict": true,
+    "esModuleInterop": true,
+    "rootDir": "src",
+    "outDir": "lib",
+    "moduleResolution": "node",
+    "pretty": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": false,
+    "noFallthroughCasesInSwitch": true,
+    "types": ["node", "jest"]
+  },
+  "exclude": ["node_modules", "lib", "esm", "config",  "src/**/__tests__/**/*"]
+}

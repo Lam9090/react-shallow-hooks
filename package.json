@@ -1,0 +1,44 @@
+{
+  "name": "react-shallow-hooks",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "repository": "https://github.com/lintuming/react-shallow-hooks.git",
+  "author": "lintuming <lintuming@tuzhanai.com>",
+  "license": "MIT",
+  "files": [
+    "esm",
+    "lib"
+  ],
+  "dependencies": {
+    "react": "^16.9.0"
+  },
+  "scripts": {
+    "test": "jest --config ./config/jest.config.js --verbose --coverage",
+    "build:cjs": "tsc",
+    "build:esm": "tsc -m esNext --outDir esm",
+    "build": "yarn pre-build&&yarn build:cjs&&yarn build:esm",
+    "pre-build": "yarn rimraf ./lib ./esm",
+    "lint": "yarn eslint src/*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@testing-library/react-hooks": "^2.0.1",
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.4",
+    "@types/react": "^16.9.2",
+    "@typescript-eslint/eslint-plugin": "^2.1.0",
+    "@typescript-eslint/parser": "^2.1.0",
+    "eslint": "^6.3.0",
+    "eslint-config-prettier": "^6.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "jest": "^24.9.0",
+    "react-test-renderer": "^16.9.0",
+    "storybook": "^1.0.0",
+    "typescript": "^3.6.2"
+  }
+}
