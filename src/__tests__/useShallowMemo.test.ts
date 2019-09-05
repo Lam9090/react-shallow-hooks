@@ -40,7 +40,7 @@ describe("useShallowMemo", () => {
     const [hook, bodyFn] = getHook([{ shallow: 1 }]);
     expect(hook.result.current).toBe(0);
     expect(bodyFn).toHaveBeenCalledTimes(1);
-    hook.rerender([{ shallow: 2 }]);
+    hook.rerender([{ shallow: 2,boo:"boo" }]);
     expect(hook.result.current).toBe(1);
     expect(bodyFn).toHaveBeenCalledTimes(2);
   });
