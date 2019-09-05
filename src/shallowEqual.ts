@@ -35,7 +35,8 @@ function shallowEqual(objA: unknown, objB: unknown) {
   return true;
 }
 
-export default function shallowEquals(A: readonly any[], B:readonly any[]) {
+export default function shallowEquals(A?: readonly any[], B?: readonly any[]) {
+  if (!Array.isArray(A) || !Array.isArray(B)) return false;
   if (A.length !== B.length) return false;
   if (A.some((item, i) => !shallowEqual(item, B[i]))) {
     return false;
