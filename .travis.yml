@@ -6,7 +6,7 @@ cache:
   directories:
     - ~/.npm
 before_install:
-  - npm install codecov.io coveralls
+  - yarn add codecov.io coveralls
 notifications:
   email: false
 node_js:

@@ -4,7 +4,7 @@ const hasOwn = Object.prototype.hasOwnProperty;
 
 function is(x: unknown, y: unknown) {
   if (x === y) {
-    return x !== 0 || y !== 0 || 1 / (x as 0) === 1 / (y as 0);
+    return x !== 0 || y !== 0 || 1 / (x as number) === 1 / (y as number);
   }
   return x !== x && y !== y;
 }
@@ -41,4 +41,5 @@ export default function shallowEquals(A?: readonly any[], B?: readonly any[]) {
     return false;
   }
   return true;
-}
+};
+

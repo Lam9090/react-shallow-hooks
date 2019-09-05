@@ -2,7 +2,7 @@
   "name": "react-shallow-hooks",
   "version": "1.0.0",
   "main": "lib/index.js",
-  "module":"esm/index.js",
+  "module": "esm/index.js",
   "repository": "https://github.com/lintuming/react-shallow-hooks.git",
   "author": "lintuming <lntmg.lin@gmail.com>",
   "license": "MIT",
@@ -13,8 +13,17 @@
   "dependencies": {
     "react": "^16.9.0"
   },
+  "lint-staged": {
+    "./src/**/*.{ts,tsx}": [
+      "eslint --fix -t verbose",
+      "git add"
+    ]
+  },
+  "husky": {
+    "pre-commit": "yarn lint-staged"
+  },
   "scripts": {
-    "test": "jest --config ./config/jest.config.js --verbose --coverage",
+    "test": "jest --verbose --coverage",
     "build:cjs": "tsc",
     "build:esm": "tsc -m esNext --outDir esm",
     "build": "yarn pre-build&&yarn build:cjs&&yarn build:esm",
@@ -36,9 +45,14 @@
     "eslint-config-prettier": "^6.2.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
+    "husky": "^3.0.5",
     "jest": "^24.9.0",
+    "lint-staged": "^9.2.5",
+    "prettier": "^1.18.2",
     "react-test-renderer": "^16.9.0",
+    "rimraf": "^3.0.0",
     "typescript": "3.5.3"
   }
 }
