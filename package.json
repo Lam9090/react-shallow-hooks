@@ -13,14 +13,10 @@
   "dependencies": {
     "react": "^16.9.0"
   },
-  "lint-staged": {
-    "./src/**/*.{ts,tsx}": [
-      "eslint --fix -t verbose",
-      "git add"
-    ]
-  },
   "husky": {
-    "pre-commit": "yarn lint-staged"
+    "hooks": {
+      "pre-commit": "yarn lint --fix&&git add ."
+    }
   },
   "scripts": {
     "test": "jest --verbose --coverage",
@@ -49,7 +45,6 @@
     "eslint-plugin-react": "^7.14.3",
     "husky": "^3.0.5",
     "jest": "^24.9.0",
-    "lint-staged": "^9.2.5",
     "prettier": "^1.18.2",
     "react-test-renderer": "^16.9.0",
     "rimraf": "^3.0.0",

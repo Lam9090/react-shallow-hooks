@@ -12,12 +12,7 @@ function is(x: unknown, y: unknown) {
 function shallowEqual(objA: unknown, objB: unknown) {
   if (is(objA, objB)) return true;
 
-  if (
-    typeof objA !== "object" ||
-    objA === null ||
-    typeof objB !== "object" ||
-    objB === null
-  ) {
+  if (typeof objA !== 'object' || objA === null || typeof objB !== 'object' || objB === null) {
     return false;
   }
 
@@ -41,5 +36,4 @@ export default function shallowEquals(A?: readonly any[], B?: readonly any[]) {
     return false;
   }
   return true;
-};
-
+}
