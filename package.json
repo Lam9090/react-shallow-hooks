@@ -11,9 +11,9 @@
     "lib"
   ],
   "dependencies": {
-    "codecov.io": "^0.1.6",
-    "coveralls": "^3.0.6",
-    "lint-staged": "^9.2.5",
+    "lint-staged": "^9.2.5"
+  },
+  "peerDependencies": {
     "react": "^16.9.0"
   },
   "husky": {
