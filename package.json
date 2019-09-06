@@ -1,6 +1,6 @@
 {
   "name": "react-shallow-hooks",
-  "version": "0.0.0-development",
+  "version": "0.0.1",
   "main": "lib/index.js",
   "module": "esm/index.js",
   "repository": "https://github.com/lintuming/react-shallow-hooks.git",
@@ -32,7 +32,8 @@
     "build": "yarn pre-build&&yarn build:cjs&&yarn build:esm",
     "pre-build": "yarn rimraf ./lib ./esm",
     "lint": "yarn eslint src/**/*.{ts,tsx}",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "prepublishOnly": "yarn build"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
