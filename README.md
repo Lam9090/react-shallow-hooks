@@ -2,6 +2,9 @@
 
 [![Build Status](https://travis-ci.org/lintuming/react-shallow-hooks.svg?branch=master)](https://travis-ci.org/lintuming/react-shallow-hooks)
 [![Coverage Status](https://coveralls.io/repos/github/lintuming/react-shallow-hooks/badge.svg?branch=master)](https://coveralls.io/github/lintuming/react-shallow-hooks?branch=master)
+![npm](https://img.shields.io/npm/v/react-shallow-hooks)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+![GitHub](https://img.shields.io/github/license/lintuming/react-shallow-hooks)
 
 A bunch sets of React Hooks which performs a shallow equality comparison on each dependencies array values to determine if they should update.
 
@@ -41,6 +44,7 @@ const useSomething=()=>{
   useShallowEffect(()=>{
     console.log('update')
   },[deps])
+
 }
 ```
 
