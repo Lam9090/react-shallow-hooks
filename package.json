@@ -11,9 +11,7 @@
     "lib"
   ],
   "dependencies": {
-    "lint-staged": "^9.2.5"
-  },
-  "peerDependencies": {
+    "lint-staged": "^9.2.5",
     "react": "^16.9.0"
   },
   "husky": {
