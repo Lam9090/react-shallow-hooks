@@ -1,6 +1,6 @@
 {
   "name": "react-shallow-hooks",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "lib/index.js",
   "module": "esm/index.js",
   "repository": "https://github.com/lintuming/react-shallow-hooks.git",
@@ -11,6 +11,8 @@
     "lib"
   ],
   "dependencies": {
+    "codecov.io": "^0.1.6",
+    "coveralls": "^3.0.6",
     "lint-staged": "^9.2.5",
     "react": "^16.9.0"
   },
