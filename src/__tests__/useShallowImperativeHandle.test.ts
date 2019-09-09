@@ -1,9 +1,27 @@
 import { useShallowImperativeHandle } from '../';
 import React, { RefObject } from 'react';
 import { renderHook, RenderHookResult } from '@testing-library/react-hooks';
+import { getEmptyDepsMsg, getPrimitiveDepsMsg } from './utils';
 
 describe('useShallowImperativeHandle', () => {
-  const getHook = <T>(deps?: any[], init?: () => T): [RefObject<T>, RenderHookResult<any[], any>, jest.Mock] => {
+  const originWarn = console.warn;
+  const OLD_ENV = process.env;
+
+  beforeEach(() => {
+    console.warn = jest.fn();
+    jest.resetModules(); // this is important - it clears the cache
+    process.env = { ...OLD_ENV };
+    delete process.env.NODE_ENV;
+  });
+
+  afterEach(() => {
+    console.warn = originWarn;
+    process.env = OLD_ENV;
+  });
+  const getHook = <T>(
+    deps?: any[],
+    init: () => T = () => ({} as T)
+  ): [RefObject<T>, RenderHookResult<any[], any>, jest.Mock] => {
     const ref = React.createRef<T>();
     const bodyFn = jest.fn();
     return [
@@ -20,6 +38,19 @@ describe('useShallowImperativeHandle', () => {
   };
   it('should be defined', () => {
     expect(useShallowImperativeHandle).toBeDefined();
+  });
+  it('should warn when pass empty deps', () => {
+    getHook();
+    expect(console.warn).toHaveBeenCalledWith(getEmptyDepsMsg('useShallowImperativeHandle'));
+    getHook([1, 2, 3]);
+    expect(console.warn).toHaveBeenCalledWith(getPrimitiveDepsMsg('useShallowImperativeHandle'));
+  });
+  it('should not warn when passing empty deps on production mode', () => {
+    process.env.NODE_ENV = 'production';
+    getHook();
+    expect(console.warn).toHaveBeenCalledTimes(0);
+    getHook([1, 2, 3]);
+    expect(console.warn).toHaveBeenCalledTimes(0);
   });
   it('should customizes the instance value', () => {
     let i = 0;

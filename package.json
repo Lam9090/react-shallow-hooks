@@ -3,7 +3,10 @@
   "version": "1.0.1",
   "main": "lib/index.js",
   "module": "esm/index.js",
-  "repository": "https://github.com/lintuming/react-shallow-hooks.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lintuming/react-shallow-hooks.git"
+  },
   "author": "lintuming <lntmg.lin@gmail.com>",
   "license": "MIT",
   "files": [

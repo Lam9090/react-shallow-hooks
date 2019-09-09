@@ -49,6 +49,6 @@ const useSomething=()=>{
 }
 ```
 
-## LICENSE
+## License
 
 - [MIT](./LICENSE)
