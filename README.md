@@ -25,14 +25,14 @@ The list of hooks are avaliable:
 
 ```js
 npm install react-shallow-hooks
-# or
+# use yarn
 yarn add react-shallow-hooks
 ```
 
 ## Usage
 
 ```js
-import {useShallowEffect} 'react-shallow-hooks'
+import { useShallowEffect, useShallowCallback } 'react-shallow-hooks'
 
 const useSomething=()=>{
   const deps={
@@ -40,10 +40,11 @@ const useSomething=()=>{
     b:123
   }
   //The effect callback only call once ,and won't call on every re-render;
-  //shallowEqual(deps,previousdeps)===true
   useShallowEffect(()=>{
     console.log('update')
   },[deps])
+  
+  const shallowCallback=useShallowEffect(()=>console.log('callback'),[deps])
 
 }
 ```
