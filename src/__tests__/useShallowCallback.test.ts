@@ -36,13 +36,13 @@ describe('useShallowCallback', () => {
     ];
   };
 
-  it('should warn when passing empty deps', () => {
+  it('should deprecate when used with no dependencies or dependencies that are all primitive value', () => {
     getHook();
     expect(console.warn).toHaveBeenCalledWith(getEmptyDepsMsg('useShallowCallback'));
     getHook([1, 2, 3]);
     expect(console.warn).toHaveBeenCalledWith(getPrimitiveDepsMsg('useShallowCallback'));
   });
-  it('should not warn when passing empty deps on production mode', () => {
+  it('should not deprecate when used on production mode', () => {
     process.env.NODE_ENV = 'production';
     getHook();
     expect(console.warn).toHaveBeenCalledTimes(0);

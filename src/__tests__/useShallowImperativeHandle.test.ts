@@ -39,13 +39,13 @@ describe('useShallowImperativeHandle', () => {
   it('should be defined', () => {
     expect(useShallowImperativeHandle).toBeDefined();
   });
-  it('should warn when pass empty deps', () => {
+  it('should deprecate when used with no dependencies or dependencies that are all primitive value', () => {
     getHook();
     expect(console.warn).toHaveBeenCalledWith(getEmptyDepsMsg('useShallowImperativeHandle'));
     getHook([1, 2, 3]);
     expect(console.warn).toHaveBeenCalledWith(getPrimitiveDepsMsg('useShallowImperativeHandle'));
   });
-  it('should not warn when passing empty deps on production mode', () => {
+  it('should not deprecate when used on production mode', () => {
     process.env.NODE_ENV = 'production';
     getHook();
     expect(console.warn).toHaveBeenCalledTimes(0);
