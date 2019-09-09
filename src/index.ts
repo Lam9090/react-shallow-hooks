@@ -3,7 +3,7 @@ import useShallowDeps from './useShallowDeps';
 
 const isPrimitive = (val: any) => val !== Object(val);
 
-const warningNotShallow = (lastestDeps, hookName: string) => {
+const deprecatedPrimitiveDeps = (lastestDeps, hookName: string) => {
   if (process.env.NODE_ENV !== 'production') {
     const originName = `use${hookName.slice(10)}`;
     if (!lastestDeps || !lastestDeps.length) {
@@ -19,23 +19,23 @@ const warningNotShallow = (lastestDeps, hookName: string) => {
 };
 
 const useShallowEffect = function(cb: EffectCallback, deps: DependencyList) {
-  warningNotShallow(deps, 'useShallowEffect');
+  deprecatedPrimitiveDeps(deps, 'useShallowEffect');
   return React.useEffect(cb, useShallowDeps(deps));
 };
 const useShallowLayoutEffect = function(cb: EffectCallback, deps: any[]) {
-  warningNotShallow(deps, 'useShallowLayoutEffect');
+  deprecatedPrimitiveDeps(deps, 'useShallowLayoutEffect');
   return React.useLayoutEffect(cb, useShallowDeps(deps));
 };
 const useShallowMemo = function<T>(cb: () => T, deps: any[]) {
-  warningNotShallow(deps, 'useShallowMemo');
+  deprecatedPrimitiveDeps(deps, 'useShallowMemo');
   return React.useMemo<T>(cb, useShallowDeps(deps));
 };
 const useShallowCallback = function(cb: (...args: any[]) => any, deps: any[]) {
-  warningNotShallow(deps, 'useShallowCallback');
+  deprecatedPrimitiveDeps(deps, 'useShallowCallback');
   return React.useCallback(cb, useShallowDeps(deps));
 };
 const useShallowImperativeHandle = function<T, R extends T>(ref: Ref<T> | undefined, cb: () => R, deps: any[]) {
-  warningNotShallow(deps, 'useShallowImperativeHandle');
+  deprecatedPrimitiveDeps(deps, 'useShallowImperativeHandle');
   return React.useImperativeHandle(ref, cb, useShallowDeps(deps));
 };
 
