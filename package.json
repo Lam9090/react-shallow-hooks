@@ -2,7 +2,6 @@
   "name": "react-shallow-hooks",
   "version": "1.0.2",
   "main": "lib/index.js",
-  "module": "esm/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/lintuming/react-shallow-hooks.git"
@@ -10,7 +9,6 @@
   "author": "lintuming <lntmg.lin@gmail.com>",
   "license": "MIT",
   "files": [
-    "esm",
     "lib"
   ],
   "dependencies": {
@@ -42,14 +40,17 @@
     ]
   },
   "scripts": {
-    "test": "jest --verbose --coverage",
+    "test": "jest --config ./config/jest.config.js --verbose --coverage",
     "build:cjs": "tsc",
     "build:esm": "tsc -m esNext --outDir esm",
     "build": "yarn pre-build&&yarn build:cjs&&yarn build:esm",
     "pre-build": "yarn rimraf ./lib ./esm",
     "lint": "yarn eslint src/**/*.{ts,tsx}",
     "semantic-release": "semantic-release",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "yarn build",
+    "rollup:dev": "yarn rollup --config ./config/rollup.config.dev.js",
+    "rollup:prod": "yarn rollup --config ./config/rollup.config.prod.js",
+    "build:rollup": "yarn rollup:dev&&yarn rollup:prod"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -80,6 +81,14 @@
     "prettier": "^1.18.2",
     "react-test-renderer": "^16.9.0",
     "rimraf": "^3.0.0",
+    "rollup": "^1.21.2",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-copy": "^3.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-terser": "^5.1.1",
+    "rollup-plugin-uglify": "^6.0.3",
     "semantic-release": "^15.13.24",
     "typescript": "3.5.3"
   }
