@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/lintuming/react-shallow-hooks/compare/v1.0.3...v1.0.4) (2019-09-11)
+
+
+### Bug Fixes
+
+* **npm:** move lint-staged to devDependencies ([e52fb66](https://github.com/lintuming/react-shallow-hooks/commit/e52fb66))
+
 ## [1.0.3](https://github.com/lintuming/react-shallow-hooks/compare/v1.0.2...v1.0.3) (2019-09-11)
 
 
