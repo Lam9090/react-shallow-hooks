@@ -11,6 +11,7 @@
   "files": [
     "lib"
   ],
+  "types": "./lib/types/index.d.ts",
   "dependencies": {
     "react": "^16.9.0"
   },
@@ -41,13 +42,14 @@
   },
   "scripts": {
     "test": "jest --config ./config/jest.config.js --verbose --coverage",
-    "build": "yarn build:rollup",
+    "build": "yarn build:types&&yarn build:rollup",
     "lint": "yarn eslint src/**/*.{ts,tsx}",
     "semantic-release": "semantic-release",
     "prepublishOnly": "yarn build",
-    "rollup:dev": "yarn rollup --config ./config/rollup.config.dev.js",
-    "rollup:prod": "yarn rollup --config ./config/rollup.config.prod.js",
-    "build:rollup": "yarn rollup:dev&&yarn rollup:prod"
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:dev": "yarn rollup --config ./config/rollup.config.dev.js",
+    "build:prod": "yarn rollup --config ./config/rollup.config.prod.js",
+    "build:rollup": "yarn build:dev&&yarn build:prod"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -85,6 +87,7 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-replace": "^2.2.0",
     "rollup-plugin-terser": "^5.1.1",
+    "rollup-plugin-typescript2": "^0.24.1",
     "rollup-plugin-uglify": "^6.0.3",
     "semantic-release": "^15.13.24",
     "typescript": "3.5.3"
