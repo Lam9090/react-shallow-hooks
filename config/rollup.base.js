@@ -6,7 +6,6 @@ import { terser } from 'rollup-plugin-terser';
 import copy from 'rollup-plugin-copy';
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 
-const name = 'RollupTypeScriptBabel';
 
 const getConfig = isProduction => ({
   input: 'src/index.ts',
