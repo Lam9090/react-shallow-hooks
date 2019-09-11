@@ -41,10 +41,7 @@
   },
   "scripts": {
     "test": "jest --config ./config/jest.config.js --verbose --coverage",
-    "build:cjs": "tsc",
-    "build:esm": "tsc -m esNext --outDir esm",
-    "build": "yarn pre-build&&yarn build:cjs&&yarn build:esm",
-    "pre-build": "yarn rimraf ./lib ./esm",
+    "build": "yarn build:rollup",
     "lint": "yarn eslint src/**/*.{ts,tsx}",
     "semantic-release": "semantic-release",
     "prepublishOnly": "yarn build",
