@@ -42,13 +42,11 @@
   },
   "scripts": {
     "test": "jest --config ./config/jest.config.js --verbose --coverage",
-    "build": "yarn clean&&yarn build:types&&yarn build:dev&&yarn build:prod",
+    "build": "yarn clean&&yarn build:types&&node ./scripts/build.js",
     "lint": "yarn eslint src/**/*.{ts,tsx}",
     "semantic-release": "semantic-release",
     "prepublishOnly": "yarn build",
     "build:types": "tsc --emitDeclarationOnly",
-    "build:dev": "yarn rollup --config ./config/rollup.config.dev.js",
-    "build:prod": "yarn rollup --config ./config/rollup.config.prod.js",
     "clean": "rimraf ./lib"
   },
   "devDependencies": {

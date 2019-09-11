@@ -19,7 +19,7 @@ module.exports = {
   extends: ['plugin:react/recommended', 'plugin:import/typescript', 'prettier', 'prettier/react'],
   overrides: [
     {
-      files: ['*.ts', '*.tsx'],
+      files: ['*.ts', '*.tsx',"*.js","*.ts"],
       rules: {
         '@typescript-eslint/no-unused-vars': [2, { args: 'none' }],
       },
