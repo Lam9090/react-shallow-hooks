@@ -1,6 +1,6 @@
 {
   "name": "react-shallow-hooks",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "lib/index.js",
   "module": "esm/index.js",
   "repository": {
@@ -17,7 +17,6 @@
     "lint-staged": "^9.2.5",
     "react": "^16.9.0"
   },
-
   "lint-staged": {
     "*.{ts,tsx}": [
       "yarn lint --fix",
