@@ -15,7 +15,6 @@ const deprecatedPrimitiveDeps = (lastestDeps, hookName: string) => {
     );
   }
 };
-
 const useShallowEffect = function(cb: EffectCallback, deps: DependencyList) {
   if (process.env.NODE_ENV !== 'production') {
     deprecatedPrimitiveDeps(deps, 'useShallowEffect');
