@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/lintuming/react-shallow-hooks/compare/v1.0.4...v1.0.5) (2019-09-11)
+
+
+### Performance Improvements
+
+* export different bundle on different env ([9a5b4b4](https://github.com/lintuming/react-shallow-hooks/commit/9a5b4b4))
+
 ## [1.0.4](https://github.com/lintuming/react-shallow-hooks/compare/v1.0.3...v1.0.4) (2019-09-11)
 
 
