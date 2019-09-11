@@ -1,6 +1,7 @@
 import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
+import typescript from 'rollup-plugin-typescript2';
 import replace from 'rollup-plugin-replace';
 import { terser } from 'rollup-plugin-terser';
 import copy from 'rollup-plugin-copy';
@@ -39,7 +40,7 @@ const getConfig = isProduction => ({
         },
       ],
     }),
-    isProduction?terser():false
+    isProduction?terser():false,
   ].filter(Boolean),
 
   output: [
