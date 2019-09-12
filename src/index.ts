@@ -46,4 +46,11 @@ const useShallowImperativeHandle = function<T, R extends T>(ref: Ref<T> | undefi
   return React.useImperativeHandle(ref, cb, useShallowDeps(deps));
 };
 
+export default {
+  useShallowEffect,
+  useShallowImperativeHandle,
+  useShallowCallback,
+  useShallowMemo,
+  useShallowLayoutEffect,
+};
 export { useShallowEffect, useShallowImperativeHandle, useShallowCallback, useShallowMemo, useShallowLayoutEffect };
