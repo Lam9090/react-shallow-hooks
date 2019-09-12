@@ -5,7 +5,7 @@
     "lib": ["es2018", "dom"],
     "jsx": "react",
     "declaration": true,
-    "declarationDir": "./lib/types",
+    "declarationDir": "./types",
     "sourceMap": false,
     "strict": true,
     "esModuleInterop": true,
@@ -18,7 +18,8 @@
     "noImplicitReturns": true,
     "noImplicitAny": false,
     "noFallthroughCasesInSwitch": true,
-    "types": ["node", "jest"]
+    "types": ["node", "jest"],
+    "emitDeclarationOnly": true
   },
-  "exclude": ["node_modules", "lib", "esm", "config",  "src/**/__tests__/**/*"]
+  "exclude": ["node_modules", "lib", "esm", "config", "src/**/__tests__/**/*", "types"]
 }

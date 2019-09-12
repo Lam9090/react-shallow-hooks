@@ -2,6 +2,7 @@
   "name": "react-shallow-hooks",
   "version": "1.0.4",
   "main": "lib/index.js",
+  "module": "esm/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/lintuming/react-shallow-hooks.git"
@@ -9,9 +10,10 @@
   "author": "lintuming <lntmg.lin@gmail.com>",
   "license": "MIT",
   "files": [
-    "lib"
+    "lib",
+    "esm"
   ],
-  "types": "./lib/types/index.d.ts",
+  "types": "./types/index.d.ts",
   "dependencies": {
     "react": "^16.9.0"
   },
@@ -42,12 +44,11 @@
   },
   "scripts": {
     "test": "jest --config ./config/jest.config.js --verbose --coverage",
-    "build": "yarn clean&&yarn build:types&&node ./scripts/build.js",
+    "build": "node ./scripts/build.js&yarn build:types",
     "lint": "yarn eslint src/**/*.{ts,tsx}",
     "semantic-release": "semantic-release",
     "prepublishOnly": "yarn build",
-    "build:types": "tsc --emitDeclarationOnly",
-    "clean": "rimraf ./lib"
+    "build:types": "tsc --emitDeclarationOnly"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

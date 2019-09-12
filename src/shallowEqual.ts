@@ -1,5 +1,3 @@
-/* eslint-disable no-self-compare */
-
 const hasOwn = Object.prototype.hasOwnProperty;
 
 function is(x: unknown, y: unknown) {
@@ -8,7 +6,6 @@ function is(x: unknown, y: unknown) {
   }
   return x !== x && y !== y;
 }
-
 function shallowEqual(objA: unknown, objB: unknown) {
   if (is(objA, objB)) return true;
 
