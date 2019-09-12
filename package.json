@@ -14,8 +14,8 @@
     "esm"
   ],
   "types": "./types/index.d.ts",
-  "dependencies": {
-    "react": "^16.9.0"
+  "peerDependencies": {
+    "react": "16.8.x"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
