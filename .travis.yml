@@ -7,7 +7,6 @@ cache:
     - ~/.npm
 before_install:
   - yarn add codecov.io coveralls
-  - yarn add react
 notifications:
   email: false
 node_js:
