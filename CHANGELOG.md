@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/lintuming/react-shallow-hooks/compare/v1.0.6...v1.0.7) (2019-09-12)
+
+
+### Bug Fixes
+
+* specified the react version `>=16.8.0` in peerDependencies ([216e074](https://github.com/lintuming/react-shallow-hooks/commit/216e074))
+
 ## [1.0.6](https://github.com/lintuming/react-shallow-hooks/compare/v1.0.5...v1.0.6) (2019-09-11)
 
 
